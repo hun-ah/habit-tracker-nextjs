@@ -17,7 +17,7 @@ const Card = ({
     <div className={card}>
       <Image src={img} alt={alt} width={width} height={height} />
       <div className={styles.text}>
-        <span className={`${cardTitle} ${titleColor}`}>{title}</span>
+        <span className={`${cardTitle} ${styles[titleColor]}`}>{title}</span>
         <span className={cardBlurb}>{blurb}</span>
       </div>
     </div>
