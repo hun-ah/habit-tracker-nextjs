@@ -1,0 +1,68 @@
+.primary-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  background: var(--primary);
+  color: #fff;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.main-btn {
+  width: 160px;
+  font-size: 16px;
+  line-height: 150%;
+  padding: 14px 0px;
+}
+
+.nav-btn {
+  padding: 8px 12px;
+  font-size: 14px;
+  line-height: 150%;
+}
+
+.login-signup-btn {
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 150%;
+}
+
+.habit-btn {
+  padding: 14px 24px;
+}
+
+.complete-btn {
+  padding: 8px 12px;
+}
+
+.undo-btn {
+  cursor: pointer;
+  padding: 8px 12px;
+  border-radius: 8px;
+  background: var(--primary);
+  color: #fff;
+  transition: 0.3s ease;
+}
+
+.undo-btn:hover {
+  background: #f05252;
+}
+
+.abandon-btn {
+  cursor: pointer;
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+  background: none;
+  transition: 0.3s ease;
+}
+
+.abandon-btn:hover {
+  border-color: #b2b4b7;
+}
+
+.primary-btn:hover {
+  background: var(--btn-hover-green);
+}

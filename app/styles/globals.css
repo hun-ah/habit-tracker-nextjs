@@ -1,0 +1,221 @@
+:root {
+  --primary: #1c64f2;
+  --bg-dark: #0e141f;
+  --bg-light: #f9fafb;
+  --font-light: #6b7280;
+  --font-dark: #111928;
+  --btn-hover-green: #31c48d;
+}
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  text-decoration: none;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+html {
+  scroll-behavior: smooth !important;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+button {
+  border: none;
+}
+
+input:focus {
+  outline: none;
+}
+
+h1 {
+  color: var(--font-dark);
+  font-size: 60px;
+  font-weight: 800;
+  line-height: 60px;
+  letter-spacing: -0.6px;
+}
+
+h2 {
+  color: var(--font-light);
+  font-size: 20px;
+  line-height: 150%;
+}
+
+.text-primary {
+  color: var(--primary);
+}
+
+.inner-container {
+  padding: 0 48px;
+  width: calc(100% - 96px);
+  margin: 0 auto;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.error-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 24px;
+  height: calc(100% - 85px);
+}
+
+.not-found-text {
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+}
+
+@media screen and (min-width: 1500px) {
+  .inner-container {
+    max-width: 1500px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .inner-container {
+    padding: 0 24px;
+    margin: 0;
+    width: calc(100% - 48px);
+  }
+}
+
+@media screen and (max-height: 600px) {
+  .error-container {
+    margin: 130px 0;
+  }
+}
