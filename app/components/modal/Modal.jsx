@@ -1,7 +1,6 @@
 'use client';
 import styles from './page.module.css';
 import validator from 'validator';
-// import '../../styles/buttons.css';
 import { useState, useEffect } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { signIn, useSession } from 'next-auth/react';
