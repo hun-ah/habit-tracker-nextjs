@@ -1,0 +1,35 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: var(--font-dark);
+  padding: 96px 0;
+  gap: 24px;
+}
+
+.heading {
+  color: var(--bg-light);
+  text-align: center;
+  font-size: 44px;
+  font-weight: 800;
+  line-height: 44px;
+  letter-spacing: -0.44px;
+}
+
+.text {
+  width: 810px;
+  font-size: 20px;
+  line-height: 150%;
+  color: var(--bg-light);
+  text-align: center;
+}
+
+@media screen and (max-width: 1000px) {
+  .text {
+    width: 100%;
+  }
+
+  .container {
+    padding: 96px 24px;
+  }
+}
