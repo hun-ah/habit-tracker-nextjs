@@ -1,6 +1,6 @@
-import Main from './components/home/Main';
-import Who from './components/home/Who';
-import Why from './components/home/Why';
+import Main from './components/home/main/Main';
+import Who from './components/home/who/Who';
+import Why from './components/home/why/Why';
 
 const HomePage = () => {
   return (
