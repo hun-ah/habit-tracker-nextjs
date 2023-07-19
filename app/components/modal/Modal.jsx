@@ -1,5 +1,5 @@
 'use client';
-import styles from './page.module.css';
+import styles from './Modal.module.css';
 import validator from 'validator';
 import { useState, useEffect } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
