@@ -4,7 +4,7 @@ import TodaysDate from '../components/habits/TodaysDate';
 import HabitsLeft from '../components/habits/HabitsLeft';
 import HabitForm from '../components/habits/HabitForm';
 import Card from '../components/habits/Card';
-import Loader from '../components/Loader';
+import Loader from '../components/loader/Loader';
 import NoHabits from '../components/habits/NoHabits';
 import LoadingCard from '../components/habits/LoadingCard';
 import CompletedMsg from '../components/habits/CompletedMsg';
