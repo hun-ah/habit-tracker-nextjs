@@ -1,5 +1,5 @@
 'use client';
-import Input from '../Input';
+import Input from '../input/Input';
 import Button from '../Button';
 import { useState } from 'react';
 import { useSession } from 'next-auth/react';
