@@ -1,7 +1,7 @@
 import './styles/globals.css';
 import { Inter } from 'next/font/google';
 import Nav from './components/nav/Nav';
-import Footer from './components/Footer';
+import Footer from './components/footer/Footer';
 import { MenuProvider } from './components/contexts/mobileMenuContext';
 import AuthProvider from './components/authProvider/AuthProvider';
 import MobileMenu from './components/nav/MobileMenu';
