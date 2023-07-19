@@ -1,4 +1,3 @@
-import '../../../styles/why.css';
 import styles from './page.module.css';
 import Card from '../card/Card';
 
@@ -8,14 +7,14 @@ const cardContent = [
     blurb: 'Getting your habits done builds forward momentum.',
     img: '/icon_motivation.svg',
     alt: 'fast forward symbol',
-    titleColor: 'color-teal',
+    titleColor: 'teal',
   },
   {
     title: 'Satisfying',
     blurb: 'Checking things off a list and seeing your streak feels good!',
     img: '/icon_satisfied.svg',
     alt: 'smiley face symbol',
-    titleColor: 'color-purple',
+    titleColor: 'purple',
   },
   {
     title: 'Empowering',
@@ -23,14 +22,14 @@ const cardContent = [
       'Completing daily tasks brings a sense of accomplishment and productivity.',
     img: '/icon_empowered.svg',
     alt: 'lightning bolt symbol',
-    titleColor: 'color-red',
+    titleColor: 'red',
   },
   {
     title: 'Visual Progression',
     blurb: 'See your progress continue to grow over time.',
     img: '/icon_visual.svg',
     alt: 'eye symbol',
-    titleColor: 'color-blue',
+    titleColor: 'blue',
   },
 ];
 
