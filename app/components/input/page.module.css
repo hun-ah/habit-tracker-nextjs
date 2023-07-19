@@ -1,0 +1,9 @@
+.label {
+  display: block;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 150%;
+  color: #111928;
+  margin-bottom: 8px;
+}
