@@ -1,4 +1,4 @@
-import styles from './page.module.css';
+import styles from './Card.module.css';
 import Image from 'next/image';
 
 const Card = ({

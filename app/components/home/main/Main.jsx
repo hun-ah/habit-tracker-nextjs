@@ -1,4 +1,4 @@
-import styles from './page.module.css';
+import styles from './Main.module.css';
 import Button from '../../Button';
 import Card from '../card/Card';
 

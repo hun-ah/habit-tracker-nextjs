@@ -1,4 +1,4 @@
-import styles from './page.module.css';
+import styles from './Why.module.css';
 import Card from '../card/Card';
 
 const cardContent = [
