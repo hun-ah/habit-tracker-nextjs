@@ -1,4 +1,5 @@
 'use client';
+import '../../styles/hamburger.css';
 import { useAppContext } from '../contexts/mobileMenuContext';
 
 const Hamburger = () => {
