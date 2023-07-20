@@ -1,13 +1,13 @@
 'use client';
-import '../styles/habits.css';
+import styles from './page.module.css';
 import TodaysDate from '../components/habits/TodaysDate';
-import HabitsLeft from '../components/habits/HabitsLeft';
-import HabitForm from '../components/habits/HabitForm';
-import Card from '../components/habits/Card';
+import HabitsLeft from '../components/habits/HabitsLeft/HabitsLeft';
+import HabitForm from '../components/habits/HabitForm/HabitForm';
+import Card from '../components/habits/card/Card';
 import Loader from '../components/loader/Loader';
-import NoHabits from '../components/habits/NoHabits';
-import LoadingCard from '../components/habits/LoadingCard';
-import CompletedMsg from '../components/habits/CompletedMsg';
+import NoHabits from '../components/habits/NoHabits/NoHabits';
+import LoadingCard from '../components/habits/LoadingCard/LoadingCard';
+import CompletedMsg from '../components/habits/CompletedMsg/CompletedMsg';
 import useSWR from 'swr';
 import { useEffect } from 'react';
 import { useRouter } from 'next/navigation';
@@ -53,13 +53,13 @@ const HabitPage = () => {
     return (
       <div className='flex-column'>
         <div className='inner-container'>
-          <div className='habit-container'>
-            <div className='top-text'>
+          <div className={styles.container}>
+            <div className={styles.topText}>
               <TodaysDate />
               <HabitsLeft habitsLeft={habitsLeft} isLoading={isLoading} />
             </div>
-            <div className='left-container'>
-              <div className='bottom-text'>
+            <div className={styles.left}>
+              <div className={styles.bottomText}>
                 <h1 className='shorten-width'>{userName}&apos;s habits</h1>
                 <h2 className='shorten-width'>
                   Start with 1-2 easily achievable habits and build from there!
@@ -67,7 +67,7 @@ const HabitPage = () => {
                 <HabitForm mutate={mutate} />
               </div>
             </div>
-            <div className='right-container'>
+            <div className={styles.right}>
               {data && data.length > 0 && habitsLeft === 0 && <CompletedMsg />}
               {data && data.length < 1 && <NoHabits />}
               {isLoading ? (
