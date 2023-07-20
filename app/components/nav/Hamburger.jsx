@@ -1,6 +1,5 @@
 'use client';
 import { useAppContext } from '../contexts/mobileMenuContext';
-import '../../styles/nav.css';
 
 const Hamburger = () => {
   const { openNav, setOpenNav } = useAppContext();
@@ -11,7 +10,7 @@ const Hamburger = () => {
       type='button'
       onClick={() => setOpenNav(!openNav)}
     >
-      <span className='hamburger-box '>
+      <span className='hamburger-box'>
         <span className='hamburger-inner'></span>
       </span>
     </button>
