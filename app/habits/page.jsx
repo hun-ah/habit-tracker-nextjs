@@ -27,7 +27,7 @@ const HabitPage = () => {
   const fetcher = (...args) => fetch(...args).then((res) => res.json());
 
   const { data, error, mutate, isLoading } = useSWR(
-    `http://localhost:3000/api/habits?username=${
+    `https://habittracker-nextjs-hwm.vercel.app/api/habits?username=${
       session.data && session.data.user.email
     }`,
     fetcher
