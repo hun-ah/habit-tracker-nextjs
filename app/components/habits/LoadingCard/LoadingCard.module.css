@@ -1,0 +1,45 @@
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  border-radius: 8px;
+  height: 148px;
+}
+
+.animation {
+  position: relative;
+  display: flex;
+  min-height: 100%;
+  min-width: 100%;
+  border-radius: 8px;
+  background: var(--bg-light);
+  background-image: linear-gradient(
+    to right,
+    var(--bg-light) 0%,
+    #ecf0f4 20%,
+    var(--bg-light) 40%,
+    var(--bg-light) 100%
+  );
+  background-repeat: no-repeat;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-name: placeholderShimmer;
+  animation-timing-function: linear;
+}
+
+.border {
+  box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.1),
+    0px 1px 2px -1px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+@keyframes placeholderShimmer {
+  0% {
+    background-position: -468px 0;
+  }
+
+  100% {
+    background-position: 468px 0;
+  }
+}

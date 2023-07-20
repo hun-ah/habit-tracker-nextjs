@@ -1,0 +1,18 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 38px;
+  background: var(--bg-light);
+  border-radius: 8px;
+  height: 380px;
+}
+
+.text {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 125%;
+  color: var(--font-dark);
+  width: fit-content;
+}

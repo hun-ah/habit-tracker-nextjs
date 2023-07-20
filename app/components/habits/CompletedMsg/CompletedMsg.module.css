@@ -1,0 +1,16 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--btn-hover-green);
+  padding: 12px;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.completed {
+  color: #fff;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 150%;
+}

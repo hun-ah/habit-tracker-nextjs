@@ -1,0 +1,30 @@
+.form {
+  display: flex;
+  gap: 12px;
+}
+
+.input {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 12px 16px;
+  gap: 10px;
+  background: #f9fafb;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  width: 293px;
+}
+
+.input:focus {
+  border: 1px solid #111928;
+}
+
+@media screen and (max-width: 1300px) {
+  .form {
+    flex-direction: column;
+  }
+
+  .input {
+    width: auto;
+  }
+}

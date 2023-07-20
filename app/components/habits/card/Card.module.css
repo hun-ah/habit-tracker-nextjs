@@ -1,0 +1,58 @@
+.top {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 24px;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+  background: #fff;
+  box-shadow: 0px 2px 20px -2px rgba(0, 0, 0, 0.05);
+}
+
+.completed {
+  opacity: 0.4;
+}
+
+.title {
+  max-width: 75%;
+  color: var(--font-dark);
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 125%;
+}
+
+.streakContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.streakText {
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 150%;
+}
+
+.streak {
+  padding: 6px 8px;
+  border-radius: 8px;
+  border: 1px solid var(--btn-hover-green);
+  background: #bcf0da;
+}
+
+.divider {
+  height: 1px;
+  background: #ececec;
+}
+
+.bottom {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}
