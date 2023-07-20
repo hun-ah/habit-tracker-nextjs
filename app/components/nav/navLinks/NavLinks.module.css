@@ -1,0 +1,56 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.links {
+  display: flex;
+  gap: 32px;
+}
+
+.left {
+  display: flex;
+  gap: 32px;
+}
+
+.link {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  color: var(--font-dark);
+  cursor: pointer;
+  transition: ease 0.3s;
+}
+
+.link:hover {
+  color: var(--primary);
+}
+
+.logo {
+  display: flex !important;
+  align-items: center;
+  font-weight: 800;
+  font-size: 20px;
+  line-height: 24px;
+  letter-spacing: -0.01em;
+  background: linear-gradient(
+    to right,
+    var(--font-dark) 0%,
+    var(--font-dark) 41%,
+    var(--primary) 41%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 910px) {
+  .links {
+    display: none;
+  }
+}
