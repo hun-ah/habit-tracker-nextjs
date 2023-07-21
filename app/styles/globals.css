@@ -148,6 +148,10 @@ button {
   border: none;
 }
 
+input[type='text'] input[type='password'] {
+  font-size: 16px;
+}
+
 input:focus {
   outline: none;
 }
