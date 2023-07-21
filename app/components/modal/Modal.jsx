@@ -87,6 +87,21 @@ const Modal = ({ title, subtext, href, page }) => {
   const handleSignup = async (e) => {
     e.preventDefault();
 
+    if (!formInputs.name || !formInputs.email || !formInputs.password) {
+      setSignupErr('Please fill in all fields');
+      return;
+    }
+
+    if (!validator.isEmail(formInputs.email)) {
+      setSignupErr('Please enter a valid email address');
+      return;
+    }
+
+    if (formInputs.password.length < 6) {
+      setSignupErr('Password should be at least 6 characters');
+      return;
+    }
+
     try {
       const res = await fetch('/api/auth/register', {
         method: 'POST',
@@ -99,23 +114,14 @@ const Modal = ({ title, subtext, href, page }) => {
           password: formInputs.password,
         }),
       });
-
-      if (formInputs.password.length < 6) {
-        setSignupErr('Password should be at least 6 characters');
-      }
-
-      if (!validator.isEmail(formInputs.email)) {
-        setSignupErr('Please enter a valid email address');
-      }
-
-      if (!formInputs.name || !formInputs.email || !formInputs.password) {
-        setSignupErr('Please fill in all fields');
-      }
-
-      res.status === 201 &&
+      if (res.status === 201) {
         router.push(
           '/login?success=Account created! Login to start tracking your habits'
         );
+      } else {
+        const data = await res.json();
+        setSignupErr(data.error || 'Failed to create an account');
+      }
     } catch (err) {
       setErr(err);
       console.log(err);
