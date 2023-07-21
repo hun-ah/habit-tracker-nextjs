@@ -46,10 +46,6 @@
   transition: 0.3s ease;
 }
 
-.undo-btn:hover {
-  background: #f05252;
-}
-
 .abandon-btn {
   cursor: pointer;
   padding: 8px 12px;
@@ -59,10 +55,16 @@
   transition: 0.3s ease;
 }
 
-.abandon-btn:hover {
-  border-color: #b2b4b7;
-}
+@media screen and (min-width: 500px) {
+  .abandon-btn:hover {
+    border-color: #b2b4b7;
+  }
 
-.primary-btn:hover {
-  background: var(--btn-hover-green);
+  .primary-btn:hover {
+    background: var(--btn-hover-green);
+  }
+
+  .undo-btn:hover {
+    background: #f05252;
+  }
 }
