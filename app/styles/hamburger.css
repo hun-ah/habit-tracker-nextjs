@@ -15,12 +15,14 @@
   overflow: visible;
 }
 
-.hamburger:hover {
-  opacity: 0.7;
-}
+@media screen and (min-width: 500px) {
+  .hamburger:hover {
+    opacity: 0.7;
+  }
 
-.hamburger.is-active:hover {
-  opacity: 0.7;
+  .hamburger.is-active:hover {
+    opacity: 0.7;
+  }
 }
 
 .hamburger.is-active .hamburger-inner,
