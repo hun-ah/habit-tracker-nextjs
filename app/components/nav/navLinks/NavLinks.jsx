@@ -59,7 +59,9 @@ const NavLinks = () => {
             className={styles.link}
             onClick={() => {
               signOut({ callbackUrl: '/login' });
-              sessionStorage.setItem('authenticated', false);
+              if (typeof window !== 'undefined') {
+                sessionStorage.setItem('authenticated', false);
+              }
             }}
           >
             Logout

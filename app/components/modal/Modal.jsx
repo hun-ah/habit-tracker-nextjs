@@ -137,7 +137,10 @@ const Modal = ({ title, subtext, href, page }) => {
       email: formInputs.email,
       password: formInputs.password,
     });
-    sessionStorage.setItem('authenticated', true);
+
+    if (typeof window !== 'undefined') {
+      sessionStorage.setItem('authenticated', true);
+    }
   };
 
   // what inputs to use for displaying inside of the modal
