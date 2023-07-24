@@ -5,7 +5,6 @@ import NavLink from '../NavLink';
 import Button from '../../Button';
 import Hamburger from '../Hamburger';
 import { useSession, signOut } from 'next-auth/react';
-import { useState } from 'react';
 
 const navlinks = [
   { text: 'Who is it for?', href: '/#who' },
@@ -15,12 +14,6 @@ const navlinks = [
 
 const NavLinks = () => {
   const session = useSession();
-  const [loginSignupState, setLoginSignupState] = useState({
-    authenticated: true,
-    loginText: 'Login',
-    logoutText: 'Logout',
-    getStarted: 'Get Started',
-  });
 
   return (
     <ul className={styles.container}>
@@ -63,31 +56,10 @@ const NavLinks = () => {
             className={styles.link}
             onClick={() => {
               signOut({ callbackUrl: '/login' });
-              setLoginSignupState((prevState) => ({
-                ...prevState,
-                authenticated: !prevState.authenticated,
-              }));
             }}
           >
             Logout
           </li>
-        )}
-        {session.status === 'loading' && (
-          <>
-            <li className={styles.link}>
-              {loginSignupState.authenticated
-                ? loginSignupState.loginText
-                : loginSignupState.logoutText}
-            </li>
-            {loginSignupState.authenticated && (
-              <Button
-                text={loginSignupState.getStarted}
-                className='primary-btn nav-btn'
-                link
-                href='/signup'
-              />
-            )}
-          </>
         )}
       </div>
       <Hamburger />
