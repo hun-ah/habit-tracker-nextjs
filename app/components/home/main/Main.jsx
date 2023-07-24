@@ -1,6 +1,8 @@
+'use client';
 import styles from './Main.module.css';
 import Button from '../../Button';
 import Card from '../card/Card';
+import { useSession } from 'next-auth/react';
 
 const cardContent = [
   { title: 'Easily make new habits', blurb: 'Choose 1-2 to start' },
@@ -9,18 +11,21 @@ const cardContent = [
 ];
 
 const Main = () => {
+  const session = useSession();
   return (
     <main className={styles.container}>
       <div className={styles.heading}>
         <h1>Habit Tracker</h1>
         <h2>Stay aligned with your goals, daily!</h2>
       </div>
-      <Button
-        text='Get Started'
-        className='primary-btn main-btn'
-        link
-        href='/signup'
-      />
+      {session.status === 'unauthenticated' && (
+        <Button
+          text='Get Started'
+          className='primary-btn main-btn'
+          link
+          href='/signup'
+        />
+      )}
       <div className={styles.rectangle}></div>
       <div className={styles.cardContainer}>
         {cardContent.map((obj) => (
