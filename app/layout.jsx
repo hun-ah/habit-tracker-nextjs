@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google';
 import Nav from './components/nav/nav/Nav';
 import Footer from './components/footer/Footer';
 import { MenuProvider } from './components/contexts/mobileMenuContext';
+import { SessionAuthenticationProvider } from './components/contexts/authenticationContext';
 import AuthProvider from './components/authProvider/AuthProvider';
 import MobileMenu from './components/nav/mobileMenu/MobileMenu';
 
@@ -22,9 +23,11 @@ export default function RootLayout({ children }) {
       <body className={`${inter.className} body-container`}>
         <AuthProvider>
           <MenuProvider>
-            <Nav />
-            <MobileMenu />
-            {children}
+            <SessionAuthenticationProvider>
+              <Nav />
+              <MobileMenu />
+              {children}
+            </SessionAuthenticationProvider>
             <Footer />
           </MenuProvider>
         </AuthProvider>
