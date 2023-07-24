@@ -4,6 +4,7 @@ import validator from 'validator';
 import { useState, useEffect } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { signIn, useSession } from 'next-auth/react';
+import { useAppContext } from '../contexts/authenticationContext';
 import Input from '../input/Input';
 import Button from '../Button';
 import Link from 'next/link';
@@ -52,6 +53,7 @@ const loginInputs = [
 const Modal = ({ title, subtext, href, page }) => {
   const session = useSession();
   const router = useRouter();
+  const { authentication, setAuthentication } = useAppContext();
   const params = useSearchParams();
   const [err, setErr] = useState('');
   const [signupErr, setSignupErr] = useState('');
@@ -66,8 +68,6 @@ const Modal = ({ title, subtext, href, page }) => {
     setErr(params.get('error'));
     setSuccess(params.get('success'));
   }, [params]);
-
-  console.log(err);
 
   let inputDisplay;
   let btnText;
@@ -137,6 +137,7 @@ const Modal = ({ title, subtext, href, page }) => {
       email: formInputs.email,
       password: formInputs.password,
     });
+    sessionStorage.setItem('authenticated', true);
   };
 
   // what inputs to use for displaying inside of the modal
