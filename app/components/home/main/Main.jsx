@@ -2,7 +2,7 @@
 import styles from './Main.module.css';
 import Button from '../../Button';
 import Card from '../card/Card';
-import { useSession } from 'next-auth/react';
+import { useAppContext } from '../../contexts/authenticationContext';
 
 const cardContent = [
   { title: 'Easily make new habits', blurb: 'Choose 1-2 to start' },
@@ -11,14 +11,15 @@ const cardContent = [
 ];
 
 const Main = () => {
-  const session = useSession();
+  const { authentication } = useAppContext();
+
   return (
     <main className={styles.container}>
       <div className={styles.heading}>
         <h1>Habit Tracker</h1>
         <h2>Stay aligned with your goals, daily!</h2>
       </div>
-      {session.status === 'unauthenticated' && (
+      {!authentication && (
         <Button
           text='Get Started'
           className='primary-btn main-btn'
