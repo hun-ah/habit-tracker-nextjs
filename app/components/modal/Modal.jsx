@@ -118,6 +118,8 @@ const Modal = ({ title, subtext, href, page }) => {
         router.push(
           '/login?success=Account created! Login to start tracking your habits'
         );
+      } else if (res.status === 409) {
+        router.push('/signup?error= That email is already registered');
       } else {
         const data = await res.json();
         setSignupErr(data.error || 'Failed to create an account');
