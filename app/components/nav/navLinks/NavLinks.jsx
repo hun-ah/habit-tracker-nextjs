@@ -6,7 +6,6 @@ import Button from '../../Button';
 import Hamburger from '../Hamburger';
 import { useSession, signOut } from 'next-auth/react';
 import { useAppContext } from '../../contexts/authenticationContext';
-import { useEffect } from 'react';
 
 const navlinks = [
   { text: 'Who is it for?', href: '/#who' },
@@ -17,7 +16,6 @@ const navlinks = [
 const NavLinks = () => {
   const session = useSession();
   const { authentication } = useAppContext();
-  console.log(authentication);
 
   return (
     <ul className={styles.container}>
