@@ -6,6 +6,7 @@ import Button from '../../Button';
 import Hamburger from '../Hamburger';
 import { useSession, signOut } from 'next-auth/react';
 import { useAppContext } from '../../contexts/authenticationContext';
+import { useEffect } from 'react';
 
 const navlinks = [
   { text: 'Who is it for?', href: '/#who' },
@@ -59,9 +60,7 @@ const NavLinks = () => {
             className={styles.link}
             onClick={() => {
               signOut({ callbackUrl: '/login' });
-              if (typeof window !== 'undefined') {
-                sessionStorage.setItem('authenticated', false);
-              }
+              sessionStorage.setItem('authenticated', false);
             }}
           >
             Logout
