@@ -2,12 +2,14 @@
 import styles from './MobileMenu.module.css';
 import { useEffect } from 'react';
 import { useSession, signOut } from 'next-auth/react';
-import { useAppContext } from '../../contexts/mobileMenuContext';
+import { useAppContext as MobileMenuContext } from '../../contexts/mobileMenuContext';
+import { useAppContext as AuthenticationContext } from '../../contexts/authenticationContext';
 import Link from 'next/link';
 import NavLink from '../NavLink';
 
 const MobileMenu = () => {
-  const { openNav, setOpenNav } = useAppContext();
+  const { openNav, setOpenNav } = MobileMenuContext();
+  const { authentication } = AuthenticationContext();
   const session = useSession();
 
   const navlinks = [
@@ -90,6 +92,7 @@ const MobileMenu = () => {
             onClick={() => {
               signOut({ callbackUrl: '/login' });
               setOpenNav(!openNav);
+              sessionStorage.setItem('authenticated', false);
             }}
           >
             <div className={`${styles.dot} ${styles.blue}`}></div>
