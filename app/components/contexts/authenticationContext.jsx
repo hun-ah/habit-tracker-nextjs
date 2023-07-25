@@ -1,12 +1,17 @@
 'use client';
-import React, { createContext, useState, useContext } from 'react';
+import React, { createContext, useState, useContext, useEffect } from 'react';
 
 const AuthenticationContext = createContext();
 
 export const SessionAuthenticationProvider = ({ children }) => {
+  const isBrowser = typeof window !== 'undefined';
+
   const [authentication, setAuthentication] = useState(() => {
-    const storedValue = sessionStorage.getItem('authenticated');
-    return storedValue ? JSON.parse(storedValue) : false;
+    if (isBrowser) {
+      const storedValue = sessionStorage.getItem('authenticated');
+      return storedValue ? JSON.parse(storedValue) : false;
+    }
+    return false;
   });
 
   const value = {
