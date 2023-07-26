@@ -8,7 +8,9 @@ export const GET = async (req) => {
   const todaysDate = new Date();
   todaysDate.setHours(0, 0, 0, 0);
   const todaysDateMs = todaysDate.getTime();
-  console.log(todaysDateMs);
+  const timezoneOffsetInMilliseconds =
+    todaysDate.getTimezoneOffset() * 60 * 1000;
+  const utcTimestamp = todaysDateMs - timezoneOffsetInMilliseconds;
 
   try {
     await connect();
@@ -16,7 +18,7 @@ export const GET = async (req) => {
     await Habit.updateMany(
       {
         $expr: {
-          $gte: [{ $subtract: [todaysDateMs, '$lastCompletedMs'] }, 172800000],
+          $gte: [{ $subtract: [utcTimestamp, '$lastCompletedMs'] }, 172800000],
         },
       },
       {

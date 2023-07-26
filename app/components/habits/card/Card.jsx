@@ -10,8 +10,11 @@ const Card = ({
   lastCompleted,
   currentDate,
 }) => {
-  // current date in ms
+  // current date in ms utc time
   const currentDateMs = currentDate.getTime();
+  const timezoneOffsetInMilliseconds =
+    currentDate.getTimezoneOffset() * 60 * 1000;
+  const utcTimestamp = currentDateMs - timezoneOffsetInMilliseconds;
 
   // get yesterdays date for undoHabit
   const isoDate = new Date(currentDate.toISOString());
@@ -46,7 +49,7 @@ const Card = ({
         body: JSON.stringify({
           streak: (streak += 1),
           lastCompleted: currentDate,
-          lastCompletedMs: currentDateMs,
+          lastCompletedMs: utcTimestamp,
           func: 'completeHabit',
         }),
       });
@@ -67,7 +70,7 @@ const Card = ({
         body: JSON.stringify({
           streak: (streak -= 1),
           lastCompleted: prevDate,
-          lastCompletedMs: currentDateMs - 86400000,
+          lastCompletedMs: utcTimestamp - 86400000,
           func: 'undoHabit',
         }),
       });
