@@ -8,6 +8,7 @@ export const GET = async (req) => {
   const todaysDate = new Date();
   todaysDate.setHours(0, 0, 0, 0);
   const todaysDateMs = todaysDate.getTime();
+  console.log(todaysDateMs);
 
   try {
     await connect();
