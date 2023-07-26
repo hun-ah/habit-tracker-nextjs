@@ -11,6 +11,7 @@ export const GET = async (req) => {
   const timezoneOffsetInMilliseconds =
     todaysDate.getTimezoneOffset() * 60 * 1000;
   const utcTimestamp = todaysDateMs - timezoneOffsetInMilliseconds;
+  console.log(utcTimestamp);
 
   try {
     await connect();
