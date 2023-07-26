@@ -8,11 +8,7 @@ export const GET = async (req) => {
   const todaysDate = new Date();
   todaysDate.setHours(0, 0, 0, 0);
   const todaysDateMs = todaysDate.getTime();
-  // const timezoneOffsetInMilliseconds =
-  //   todaysDate.getTimezoneOffset() * 60 * 1000;
-  // const utcTimestamp = todaysDateMs - timezoneOffsetInMilliseconds;
   console.log(todaysDateMs);
-  // console.log(utcTimestamp);
 
   try {
     await connect();
