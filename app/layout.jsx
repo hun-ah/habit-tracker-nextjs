@@ -15,6 +15,15 @@ const inter = Inter(
 export const metadata = {
   title: 'Habit Tracker',
   description: 'A web application built to track your daily habits.',
+  openGraph: {
+    images: [
+      {
+        url: 'https://user-images.githubusercontent.com/103898493/255960174-a73e6aeb-bf7b-492b-9c2d-d5ed174ce423.png',
+        width: 800,
+        height: 600,
+      },
+    ],
+  },
 };
 
 export default function RootLayout({ children }) {
