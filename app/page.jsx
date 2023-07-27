@@ -5,7 +5,7 @@ import Why from './components/home/why/Why';
 
 const HomePage = () => {
   return (
-    <>
+    <div>
       <Head>
         <meta property='og:image' content='https://ibb.co/Yp9M2Xm' />
       </Head>
@@ -18,7 +18,7 @@ const HomePage = () => {
           <Why />
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
