@@ -13,10 +13,10 @@ const inter = Inter(
   { weights: ['400', '500', '600', '700', '800'] }
 );
 
-export const metadata = {
-  title: 'Habit Tracker',
-  description: 'A web application built to track your daily habits.',
-};
+// export const metadata = {
+//   title: 'Habit Tracker',
+//   description: 'A web application built to track your daily habits.',
+// };
 
 export default function RootLayout({ children }) {
   return (
