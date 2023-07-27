@@ -28,7 +28,7 @@ export const GET = async (req) => {
 
     const matchingHabits = await Habit.find({
       $expr: {
-        $gte: [{ $subtract: [todaysDateMs, '$lastCompletedMs'] }, 172800000],
+        $gte: [{ $subtract: ['$lastCompletedMs', todaysDateMs] }, 172800000],
       },
     });
 
