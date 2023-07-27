@@ -1,4 +1,5 @@
 import './styles/globals.css';
+import Head from 'next/head';
 import { Inter } from 'next/font/google';
 import Nav from './components/nav/nav/Nav';
 import Footer from './components/footer/Footer';
@@ -20,6 +21,12 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang='en'>
+      <Head>
+        <meta
+          property='og:image'
+          content='https://user-images.githubusercontent.com/103898493/255960174-a73e6aeb-bf7b-492b-9c2d-d5ed174ce423.png'
+        />
+      </Head>
       <body className={`${inter.className} body-container`}>
         <AuthProvider>
           <MenuProvider>
