@@ -22,10 +22,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang='en'>
       <Head>
-        <meta
-          property='og:image'
-          content='https://user-images.githubusercontent.com/103898493/255960174-a73e6aeb-bf7b-492b-9c2d-d5ed174ce423.png'
-        />
+        <meta property='og:image' content='https://ibb.co/Yp9M2Xm' />
       </Head>
       <body className={`${inter.className} body-container`}>
         <AuthProvider>
