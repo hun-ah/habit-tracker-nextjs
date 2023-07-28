@@ -18,7 +18,7 @@ export const metadata = {
   openGraph: {
     images: [
       {
-        url: 'https://user-images.githubusercontent.com/103898493/255960174-a73e6aeb-bf7b-492b-9c2d-d5ed174ce423.png',
+        url: 'https://i.ibb.co/NjyB8d8/habits.jpg',
         width: 1200,
         height: 630,
       },
