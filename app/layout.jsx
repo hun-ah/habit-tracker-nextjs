@@ -16,6 +16,10 @@ export const metadata = {
   title: 'Habit Tracker',
   description: 'A web application built to track your daily habits.',
   openGraph: {
+    title: 'Habit Tracker',
+    description: 'A web application built to track your daily habits.',
+    url: 'https://habittracker-nextjs-hwm.vercel.app/',
+    siteName: 'Habit Tracker',
     images: [
       {
         url: 'https://i.ibb.co/NjyB8d8/habits.jpg',
