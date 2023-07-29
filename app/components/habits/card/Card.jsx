@@ -15,6 +15,7 @@ const Card = ({
   const timezoneOffsetInMilliseconds =
     currentDate.getTimezoneOffset() * 60 * 1000;
   const utcTimestamp = currentDateMs - timezoneOffsetInMilliseconds;
+  console.log(utcTimestamp);
 
   // get yesterdays date for undoHabit
   const isoDate = new Date(currentDate.toISOString());
