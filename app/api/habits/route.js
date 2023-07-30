@@ -13,18 +13,26 @@ export const GET = async (req) => {
   try {
     await connect();
 
-    await Habit.updateMany(
-      {
-        $expr: {
-          $gte: [{ $subtract: [todaysDateMs, '$lastCompletedMs'] }, 172800000],
-        },
+    // await Habit.updateMany(
+    //   {
+    //     $expr: {
+    //       $gte: [{ $subtract: [todaysDateMs, '$lastCompletedMs'] }, 172800000],
+    //     },
+    //   },
+    //   {
+    //     $set: {
+    //       streak: 0,
+    //     },
+    //   }
+    // );
+
+    const matchingHabits = await Habit.find({
+      $expr: {
+        $gte: [{ $subtract: [todaysDateMs, '$lastCompletedMs'] }, 172800000],
       },
-      {
-        $set: {
-          streak: 0,
-        },
-      }
-    );
+    });
+
+    console.log(matchingHabits);
 
     const habits = await Habit.find({ username })
       .sort({ lastCompleted: 1 })
