@@ -16,7 +16,10 @@ export const GET = async (req) => {
     await Habit.updateMany(
       {
         $expr: {
-          $gte: [{ $subtract: [todaysDateMs, '$lastCompletedMs'] }, 172800000],
+          $gte: [
+            { $abs: { $subtract: [todaysDateMs, '$lastCompletedMs'] } },
+            172800000,
+          ],
         },
       },
       {
